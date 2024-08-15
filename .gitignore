@@ -2,6 +2,7 @@
 *.css
 *.xml
 *.png
+*.log
 report/
 browser/
 evidencias/
