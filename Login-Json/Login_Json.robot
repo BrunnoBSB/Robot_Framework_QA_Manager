@@ -15,8 +15,6 @@ Teste Upload
     Home logada com sucesso
     
 *** Keywords **
-#JSON
-
 Acessar a Home Page
     ${ArquivoJson}    Ler Arquivo Json [TesteData\\data.json]
     ${SITE}    Get From Dictionary   ${ArquivoJson}    URL
@@ -34,7 +32,7 @@ Fornecer dados de login
 
     Wait Until Element Is Visible   ${username}
     Input Text    ${username}       ${Usuario}
-    
+
     Wait Until Element Is Visible   ${password}
     Input Text    ${password}       ${Senha}
 
