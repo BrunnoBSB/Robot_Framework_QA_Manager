@@ -21,6 +21,7 @@ Acessar a Home Page
     ${SITE}    Get From Dictionary   ${ArquivoJson}    URL
     Open Browser    ${SITE}    chrome    #options=add_argument("--headless")
     Maximize Browser Window
+
     Wait Until Page Contains    Test login
     Wait Until Page Contains    Username 
     Wait Until Page Contains    Password 
