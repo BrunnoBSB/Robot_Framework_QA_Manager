@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.2 on win32)" generated="20240913 18:38:56.190" rpa="false" schemaversion="4">
+<suite id="s1" name="ACESSA SITE" source="c:\QA\Robot_Framework_QA_Manager\Atualiza_Json\ACESSA SITE.ROBOT">
+<test id="s1-t1" name="CT- Atualizar Valor no JSON" line="8">
+<kw name="Atualiza Json">
+<kw name="Ler Arquivo Json [data22.json]" sourcename="Ler Arquivo Json [${CaminhodoArquivo}]">
+<var>${ArquivoJson}</var>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${ArquivoJson}</var>
+<arg>${CaminhodoArquivo}</arg>
+<arg>UTF-8</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20240913 18:38:56.587" level="INFO">${ArquivoJson} = {'DATA': '2022/01/10'}</msg>
+<status status="PASS" starttime="20240913 18:38:56.586" endtime="20240913 18:38:56.588"/>
+</kw>
+<msg timestamp="20240913 18:38:56.589" level="INFO">${ArquivoJson} = {'DATA': '2022/01/10'}</msg>
+<status status="PASS" starttime="20240913 18:38:56.586" endtime="20240913 18:38:56.589"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${DATA}</var>
+<arg>${ArquivoJson}</arg>
+<arg>DATA</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20240913 18:38:56.590" level="INFO">${DATA} = 2022/01/10</msg>
+<status status="PASS" starttime="20240913 18:38:56.589" endtime="20240913 18:38:56.590"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n${DATA}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240913 18:38:56.590" endtime="20240913 18:38:56.591"/>
+</kw>
+<kw name="Add Time To Date" library="DateTime">
+<var>${DATA_ALTERADA}</var>
+<arg>${DATA}</arg>
+<arg>+1 day</arg>
+<doc>Adds time to date and returns the resulting date.</doc>
+<msg timestamp="20240913 18:38:56.598" level="INFO">${DATA_ALTERADA} = 2022-01-11 00:00:00.000</msg>
+<status status="PASS" starttime="20240913 18:38:56.592" endtime="20240913 18:38:56.598"/>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<var>${DATA_ALTERADA}</var>
+<arg>${DATA_ALTERADA}</arg>
+<arg>result_format=%Y/%m/%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<msg timestamp="20240913 18:38:56.599" level="INFO">${DATA_ALTERADA} = 2022/01/11</msg>
+<status status="PASS" starttime="20240913 18:38:56.598" endtime="20240913 18:38:56.599"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${DATA_ALTERADA}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240913 18:38:56.599" endtime="20240913 18:38:56.600"/>
+</kw>
+<kw name="Ler Arquivo Json [data22.json]" sourcename="Ler Arquivo Json [${CaminhodoArquivo}]">
+<var>${ArquivoJson}</var>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${ArquivoJson}</var>
+<arg>${CaminhodoArquivo}</arg>
+<arg>UTF-8</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20240913 18:38:56.601" level="INFO">${ArquivoJson} = {'DATA': '2022/01/10'}</msg>
+<status status="PASS" starttime="20240913 18:38:56.600" endtime="20240913 18:38:56.602"/>
+</kw>
+<msg timestamp="20240913 18:38:56.602" level="INFO">${ArquivoJson} = {'DATA': '2022/01/10'}</msg>
+<status status="PASS" starttime="20240913 18:38:56.600" endtime="20240913 18:38:56.602"/>
+</kw>
+<kw name="Update Value To Json" library="JSONLibrary">
+<var>${ALTERADO}</var>
+<arg>${ArquivoJson}</arg>
+<arg>$.DATA</arg>
+<arg>${DATA_ALTERADA}</arg>
+<doc>Update value to JSON using JSONPath</doc>
+<msg timestamp="20240913 18:38:56.626" level="INFO">${ALTERADO} = {'DATA': '2022/01/11'}</msg>
+<status status="PASS" starttime="20240913 18:38:56.602" endtime="20240913 18:38:56.627"/>
+</kw>
+<kw name="Dump Json To File" library="JSONLibrary">
+<arg>data.json</arg>
+<arg>${ALTERADO}</arg>
+<doc>Dump JSON to file</doc>
+<status status="PASS" starttime="20240913 18:38:56.627" endtime="20240913 18:38:56.628"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${ALTERADO}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20240913 18:38:56.628" endtime="20240913 18:38:56.629"/>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<var>${DATA_ALTERADA}</var>
+<arg>${DATA_ALTERADA}</arg>
+<arg>result_format=%d/%m/%Y</arg>
+<doc>Converts between supported `date formats`.</doc>
+<msg timestamp="20240913 18:38:56.630" level="INFO">${DATA_ALTERADA} = 11/01/2022</msg>
+<status status="PASS" starttime="20240913 18:38:56.629" endtime="20240913 18:38:56.630"/>
+</kw>
+<kw name="Ler Arquivo Json [data22.json]" sourcename="Ler Arquivo Json [${CaminhodoArquivo}]">
+<var>${ArquivoJson}</var>
+<kw name="Load Json From File" library="JSONLibrary">
+<var>${ArquivoJson}</var>
+<arg>${CaminhodoArquivo}</arg>
+<arg>UTF-8</arg>
+<doc>Load JSON from file.</doc>
+<msg timestamp="20240913 18:38:56.632" level="INFO">${ArquivoJson} = {'DATA': '2022/01/10'}</msg>
+<status status="PASS" starttime="20240913 18:38:56.631" endtime="20240913 18:38:56.632"/>
+</kw>
+<msg timestamp="20240913 18:38:56.633" level="INFO">${ArquivoJson} = {'DATA': '2022/01/10'}</msg>
+<status status="PASS" starttime="20240913 18:38:56.631" endtime="20240913 18:38:56.633"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${PREENCHER_CAMPO}</var>
+<arg>${ArquivoJson}</arg>
+<arg>DATA</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20240913 18:38:56.633" level="INFO">${PREENCHER_CAMPO} = 2022/01/10</msg>
+<status status="PASS" starttime="20240913 18:38:56.633" endtime="20240913 18:38:56.634"/>
+</kw>
+<status status="PASS" starttime="20240913 18:38:56.585" endtime="20240913 18:38:56.634"/>
+</kw>
+<status status="PASS" starttime="20240913 18:38:56.584" endtime="20240913 18:38:56.634"/>
+</test>
+<status status="PASS" starttime="20240913 18:38:56.196" endtime="20240913 18:38:56.635"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="ACESSA SITE">ACESSA SITE</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
