@@ -17,7 +17,7 @@ Atualiza Json
 
 ####################### Adicao de 01 dia na data #######################
     ${DATA_ALTERADA}    DateTime.Add Time To Date    ${DATA}    +1 day
-    Log To Console     Data uptade...
+    Log To Console     Data update...
 
 ####################### Formate data para retirar strings indesejadas ##################
     ${DATA_ALTERADA}    Convert Date    ${DATA_ALTERADA}   result_format=%Y/%m/%d
