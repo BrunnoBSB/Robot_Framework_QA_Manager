@@ -23,9 +23,8 @@ Atualiza Json
     Log To Console    ${DATA_ALTERADA}
 
 ###################### Salvando alteração do valor DATA no JSON #############################
-    ${ArquivoJson}   Ler Arquivo Json [data22.json]
     ${ALTERADO}    Update Value To Json    ${ArquivoJson}    $.DATA    ${DATA_ALTERADA}
-    Dump Json To File   data.json   ${ALTERADO}
+    Dump Json To File   data22.json   ${ALTERADO}
     Log To Console    ${ALTERADO}
 
 ########################## Converte data para formato brasileiro  e preenche campo ################
