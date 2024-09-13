@@ -13,24 +13,26 @@ Atualiza Json
 ####################### Ler arquivo json #######################
     ${ArquivoJson}   Ler Arquivo Json [data22.json]
     ${DATA}        Get From Dictionary    ${ArquivoJson}        DATA
-    Log To Console    \n${DATA}
+    Log To Console    \n${DATA} Data inicial
 
 ####################### Adicao de 01 dia na data #######################
     ${DATA_ALTERADA}    DateTime.Add Time To Date    ${DATA}    +1 day
+    Log To Console     Data uptade...
 
 ####################### Formate data para retirar strings indesejadas ##################
     ${DATA_ALTERADA}    Convert Date    ${DATA_ALTERADA}   result_format=%Y/%m/%d
-    Log To Console    ${DATA_ALTERADA}
+    Log To Console    ${DATA_ALTERADA} Data padrao USA
 
 ###################### Salvando alteração do valor DATA no JSON #############################
-    ${ALTERADO}    Update Value To Json    ${ArquivoJson}    $.DATA    ${DATA_ALTERADA}
-    Dump Json To File   data22.json   ${ALTERADO}
-    Log To Console    ${ALTERADO}
+    ${JSON_ADD}    Update Value To Json    ${ArquivoJson}    $.DATA    ${DATA_ALTERADA}
+    Dump Json To File   data22.json   ${JSON_ADD}
+    Log To Console    ${JSON_ADD} JSON Atualizado
 
 ########################## Converte data para formato brasileiro  e preenche campo ################
     ${DATA_ALTERADA}    Convert Date    ${DATA_ALTERADA}   result_format=%d/%m/%Y
     ${ArquivoJson}   Ler Arquivo Json [data22.json]
     ${PREENCHER_CAMPO}        Get From Dictionary    ${ArquivoJson}        DATA
+    Log To Console    ${DATA_ALTERADA} Data padrao BRA
     #Input Text    XPATH=CAMPO_DATA    ${PREENCHER_CAMPO}
 
 ############# Keyword de configuracao JSON ###################################
