@@ -1,4 +1,6 @@
 *** Settings ***
+Documentation    Teste de Upload de arquivo com utilização de While para carregar
+...              quantos arquivos forem necessarios.
 Library         SeleniumLibrary
 
 *** Variables ***
