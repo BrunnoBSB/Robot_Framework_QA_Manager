@@ -1,4 +1,6 @@
 *** Settings ***
+Documentation    Teste de Usabilidade de checkbox na WEB
+
 Library         SeleniumLibrary
 Library        OperatingSystem
 
