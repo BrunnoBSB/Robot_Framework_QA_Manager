@@ -1,5 +1,6 @@
 *** Settings ***
-Documentation    OS ERROR - OPEN FOLDER INTERNA LOGIN_JSON
+Documentation    Teste de login com a utilizaçao de JSON para armazenamento de dados de acesso.
+
 Library    SeleniumLibrary
 Library    JSONLibrary
 Library    Collections
